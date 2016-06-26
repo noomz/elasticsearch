@@ -42,6 +42,8 @@ RUN set -ex \
 		chown -R elasticsearch:elasticsearch "$path"; \
 	done
 
+RUN usermod -u 1000 elasticsearch
+
 COPY config ./config
 
 VOLUME /usr/share/elasticsearch/data
